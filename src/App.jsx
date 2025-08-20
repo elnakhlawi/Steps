@@ -11,7 +11,7 @@ const [isOpen,setisOpen]=useState(true)
   }
 
   function handleNext() {
-  if(step <3){
+  if(step <message.length){
       setStep((s)=>s+1);
   }
   }
