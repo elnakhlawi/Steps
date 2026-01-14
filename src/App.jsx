@@ -27,7 +27,10 @@ function App() {
             <div className={`${step >= 2 ? "active" : ""}`}>2</div>
             <div className={`${step >= 3 ? "active" : ""}`}>3</div>
           </div>
-          <p>{` Step number ${step}: ${message[step - 1]}`}</p>
+        
+          <MessageComp step={step}>
+            <p style={{margin:'5px  0'}}>{message[step - 1]}</p>
+          </MessageComp>
           <div className="btns">
             <Button onClick={handlePrevious} width="180px">
               <span>👈</span>
@@ -43,6 +46,15 @@ function App() {
       )}
     </>
   );
+}
+
+function MessageComp({step,children}){
+  return(
+    <div>
+      <p style={{margin:'5px'}}>{step}</p>
+      {children}
+    </div>
+  )
 }
 
 function Button({ onClick, children, width }) {
